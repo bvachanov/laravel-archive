@@ -17,6 +17,12 @@ class CreateUsersTable extends Migration
             $table->string('name');
             $table->string('email')->unique();
             $table->string('password');
+            $table->integer('account_type',3);
+            $table->foreign('account_type')->references('number')
+                    ->on('account_types')->onDelete('cascade');
+            $table->integer('faculty_number');
+            $table->string('first_name');
+            $table->string('last_name');
             $table->rememberToken();
             $table->timestamps();
         });
