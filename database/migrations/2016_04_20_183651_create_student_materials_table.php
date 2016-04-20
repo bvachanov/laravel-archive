@@ -14,7 +14,8 @@ class CreateStudentMaterialsTable extends Migration
     {
         Schema::create('student_materials', function (Blueprint $table) {
             $table->increments('id');
-            //author, discipline, content, group
+            //author, discipline, content, group, feedback
+            
             $table->timestamps();
         });
     }
