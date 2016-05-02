@@ -25,6 +25,8 @@ class CreateUsersTable extends Migration
             $table->string('last_name');
             $table->integer('year')->nullable();
             $table->string('course_of_studies')->nullable();
+            $table->boolean('is_bachelor');
+            $table->integer('group_number');
             //course_of_studies table pri accounts, tablica s grupite, bachelor/master
             $table->rememberToken();
             $table->timestamps();

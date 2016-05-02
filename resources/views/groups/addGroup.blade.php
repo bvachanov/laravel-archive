@@ -10,7 +10,7 @@
        
     </div>
     <div class="row">
-     {!! Form::submit('aaaaa') !!}
+     {!! Form::submit('submit') !!}
        
     </div>
     
