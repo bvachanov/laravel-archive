@@ -19,15 +19,9 @@ class CreateUsersTable extends Migration
             $table->string('password');
             $table->integer('account_type')->unsigned();
             $table->foreign('account_type')->references('number')
-                    ->on('account_types');
-            $table->string('academic_title');
-            $table->integer('faculty_number');
+                    ->on('account_types');        
             $table->string('first_name');            
             $table->string('last_name');
-            $table->integer('year')->nullable();
-            $table->string('course_of_studies')->nullable();
-            $table->boolean('is_bachelor');
-            $table->integer('group_number');
             //course_of_studies table pri accounts, tablica s grupite, bachelor/master
             $table->rememberToken();
             $table->timestamps();
