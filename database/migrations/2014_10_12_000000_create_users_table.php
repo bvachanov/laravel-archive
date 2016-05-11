@@ -20,8 +20,9 @@ class CreateUsersTable extends Migration
             $table->integer('account_type')->unsigned();
             $table->foreign('account_type')->references('number')
                     ->on('account_types');
+            $table->string('academic_title');
             $table->integer('faculty_number');
-            $table->string('first_name');
+            $table->string('first_name');            
             $table->string('last_name');
             $table->integer('year')->nullable();
             $table->string('course_of_studies')->nullable();

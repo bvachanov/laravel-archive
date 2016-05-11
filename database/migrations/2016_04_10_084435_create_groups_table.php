@@ -14,7 +14,15 @@ class CreateGroupsTable extends Migration
     {
         Schema::create('groups', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('name');
+            $table->string('name_bg');
+            $table->string('name_en');
+            $table->string('name_de');
+            $table->integer('professor')->unsigned();
+            $table->foreign('professor')->references('id')
+                    ->on('users');
+            $table->integer('discipline')->unsigned();
+            $table->foreign('discipline')->references('id')
+                    ->on('disciplines');
                 //teacher, fach, 
             $table->timestamps();
         });

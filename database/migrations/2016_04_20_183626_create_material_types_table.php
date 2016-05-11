@@ -14,7 +14,6 @@ class CreateMaterialTypesTable extends Migration
     {
         Schema::create('material_types', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('number');
             $table->string('name_bg');
             $table->string('name_de');
             $table->string('name_en');
