@@ -17,7 +17,7 @@ class CreateDisciplinesTable extends Migration
             $table->string('name_bg');
             $table->string('name_de');
             $table->string('name_en');
-            $table->integer('professor_id')->references('id')->on('users');
+            $table->integer('professor_id')->references('id')->on('users'); //to fix!!!!
             $table->timestamps();
         });
     }
