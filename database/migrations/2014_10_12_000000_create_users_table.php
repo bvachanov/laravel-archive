@@ -19,10 +19,7 @@ class CreateUsersTable extends Migration
             $table->string('password');
             $table->integer('account_type')->unsigned();
             $table->foreign('account_type')->references('number')
-                    ->on('account_types');        
-            $table->string('first_name');            
-            $table->string('last_name');
-            //course_of_studies table pri accounts, tablica s grupite, bachelor/master
+                    ->on('account_types');                    
             $table->rememberToken();
             $table->timestamps();
         });

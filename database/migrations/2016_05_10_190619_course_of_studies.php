@@ -13,11 +13,14 @@ class CourseOfStudies extends Migration
  public function up()
     {
         Schema::create('course_of_studies', function (Blueprint $table) {
+            //ime + akademichna stepen
             $table->increments('id');          
             $table->string('name_bg');
             $table->string('name_de');
             $table->string('name_en');
-            $table->timestamps();
+            $table->integer('academic_degree')->unsigned();
+             $table->foreign('academic_degree')->references('id')
+                    ->on('academic_degrees');           
         });
     }
 

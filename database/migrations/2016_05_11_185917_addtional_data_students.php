@@ -16,15 +16,18 @@ class AddtionalDataStudents extends Migration
             $table->increments('id');  
             $table->integer('user_id')->unsigned();
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
-            $table->integer('faculty_number');           
-            $table->integer('year');
-            $table->integer('course_of_studies')->unsigned();
-             $table->foreign('course_of_studies')->references('id')
-                    ->on('course_of_studies');
-            $table->boolean('is_bachelor');
-            $table->integer('group_number');
+            $table->string('first_name');            
+            $table->string('last_name');
+            $table->integer('faculty_number');  
+            //zavisqt ot grupata
+//            $table->integer('year');
+//            $table->integer('course_of_studies')->unsigned();
+//             $table->foreign('course_of_studies')->references('id')
+//                    ->on('course_of_studies');          
+            $table->integer('academic_group_number')->unsigned();
+            $table->foreign('academic_group_number')->references('id')
+                    ->on('academic_groups'); 
             //course_of_studies table pri accounts, tablica s grupite, bachelor/master
-            $table->rememberToken();
             $table->timestamps();
              });
     }
